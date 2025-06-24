@@ -1,13 +1,17 @@
 import './App.css';
+import { NavLink,Routes,Route } from "react-router-dom"
 
 function App() {
   return (
     <main className="App">
       <nav>
-        <a href="/puppies" className="nav">Puppies</a>
-        <a href="/sharks" className="nav">Sharks</a>
+        <NavLink to="/puppies" className="nav">Puppies</NavLink>
+        <NavLink href="/sharks" className="nav">Sharks</NavLink>
       </nav>
       <h1>Puppies or Sharks?</h1>
+      <Routes>
+        <Route path=":/creatureType" element={ <Creatures /> }/>
+      </Routes>
     </main>
   );
 }

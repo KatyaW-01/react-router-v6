@@ -1,5 +1,5 @@
 import './Creatures.css';
-import {useParams} from "react-router-dom"
+import {useParams,Link} from "react-router-dom"
 import { getCreaturesData } from "../../data/animalData"
 
 const Creatures = ({  }) => {
@@ -9,7 +9,11 @@ const Creatures = ({  }) => {
 
   const creatureImages = getCreaturesData(creatureType).map(creature => {
     const { id, image } = creature;
-    return <img src={image} key={id} id={id} className="app-img"/>
+    return (
+      <Link to={`/${creatureType}/${id}`} >
+        <img src={image} key={id} id={id} className="app-img"/>
+      </Link>
+    )
   });
 
   return (

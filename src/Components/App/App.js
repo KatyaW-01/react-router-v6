@@ -2,6 +2,7 @@ import './App.css';
 import { NavLink,Routes,Route } from "react-router-dom"
 import Creatures from "../Creatures/Creatures"
 import Home from "../Home/Home"
+import CreatureDetails from '../CreatureDetails/CreatureDetails'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/:creatureType" element={ <Creatures /> }/>
+        <Route path="/:creatureType/:id" element = { <CreatureDetails />} />
       </Routes>
     </main>
   );
